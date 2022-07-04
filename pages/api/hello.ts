@@ -5,6 +5,7 @@ import { exec } from "child_process";
 type Data = { success: boolean; data: unknown };
 
 const prcsExecutioner = (cmdString: string) => {
+  console.log("Process Command Executed: ", new Date(Date.now()).toLocaleString("tr-TR", { timeZone: "UTC" }));
   return new Promise((resolve, reject) => {
     exec(cmdString, (error, stdout, stderr) => {
       if (error) return reject(`error: ${error.message}`);

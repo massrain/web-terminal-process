@@ -8,10 +8,12 @@ const pList: any = {
   "List Recursively": "-R",
   "Sort by size": "-lS",
   Version: "-version",
+  bitfinex: "bitfinex",
+  kucoin: "kucoin",
   Help: "-help",
 };
 
-const Actions: FC<IActionsProps> = ({ handleExecutioner }) => {
+const Actions: FC<IActionsProps> = ({ handleExecutioner, isPlaying }) => {
   const [parameterList1, setParameterList1] = useState(pList);
   const [parameterList2, setParameterList2] = useState(pList);
 
@@ -99,21 +101,44 @@ const Actions: FC<IActionsProps> = ({ handleExecutioner }) => {
           </label>
         </div>
         <div className="buttons">
-          <button
-            onClick={handleStart}
-            className="inline-flex items-center px-8 py-3 mt-2 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-          >
-            <span className="text-sm font-medium">Start</span>
-            <svg
-              className="w-5 h-5 ml-3"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {isPlaying ? (
+            <button
+              onClick={handleStart}
+              className="inline-flex items-center px-8 py-3 mt-2 text-white bg-red-600 border border-red-600 rounded hover:bg-gray-200 hover:text-red-600 active:text-red-500 focus:outline-none focus:ring"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
+              <span className="text-sm font-medium">Stop</span>
+              <svg
+                className="w-5 h-5 ml-3"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={handleStart}
+              className="inline-flex items-center px-8 py-3 mt-2 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-gray-200 hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+            >
+              <span className="text-sm font-medium">Start</span>
+              <svg
+                className="w-5 h-5 ml-3"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -16,4 +16,5 @@ export interface ApiResponseSchema {
 
 export interface IActionsProps {
   handleExecutioner: (parameters: IParameters) => void;
+  isPlaying: boolean;
 }
