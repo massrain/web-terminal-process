@@ -96,7 +96,7 @@ const Actions: FC<IActionsProps> = ({ handleExecutioner, isPlaying }) => {
                 className="mx-1 w-10 p-1 text-xs text-center border-gray-200 rounded"
               />
               <span>minutes</span>
-              <span className="text-xs text-gray-500 font-normal">(cd .. yapar)</span>
+             {/*  <span className="text-xs text-gray-500 font-normal">(cd .. yapar)</span> */}
             </div>
           </label>
         </div>

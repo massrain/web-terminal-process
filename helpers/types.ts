@@ -6,7 +6,7 @@ export interface IParameters {
 }
 
 export interface IResultProps {
-  response: ApiResponseSchema;
+  response: string;
 }
 
 export interface ApiResponseSchema {

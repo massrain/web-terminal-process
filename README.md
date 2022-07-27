@@ -11,3 +11,9 @@ Web Interface for reaching command-line via NextJS api routes.
 
 - Run development server:
 `yarn dev`
+
+## Run your own command
+- Homewrapper.tsx line 20: uncomment, line 21: comment
+- Homewrapper.tsx line 67: uncomment, line 68: comment
+
+### If you change code; make sure you restart server with `yarn dev` command
